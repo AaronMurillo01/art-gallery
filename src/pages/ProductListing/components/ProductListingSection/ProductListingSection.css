@@ -3,6 +3,35 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+  position: relative;
+}
+
+.loading-more {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.loading-more::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .product-card {
